@@ -35,8 +35,7 @@ define protocol
     SECTION:=luci
     CATEGORY:=I-MOD
     TITLE:=LuCI - I-MOD
-    URL:=
-    MAINTAINER:=
+    URL:=https://github.com/askai/i-mod
     SUBMENU:=2. LuCI Protocols
     TITLE:=$(if $(2),$(2),LuCI $(1) protocol support)
     DEPENDS:=$(3)
@@ -61,8 +60,7 @@ define application
     SECTION:=luci
     CATEGORY:=I-MOD
     TITLE:=LuCI - I-MOD
-    URL:=
-    MAINTAINER:=
+    URL:=https://github.com/askai/i-mod
     SUBMENU:=1. LuCI Applications
     TITLE:=$(if $(2),$(2),LuCI $(1) application)
 	DEPENDS:=$(3)
