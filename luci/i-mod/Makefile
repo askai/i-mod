@@ -79,6 +79,54 @@ $(eval $(call application,adbyby,LuCI Support for adbyby,\
     +PACKAGE_luci-app-adbyby:libpthread \
     +PACKAGE_luci-app-adbyby:libstdcpp))
 
+$(eval $(call application,aria2,LuCI Support for aria2,\
+	+PACKAGE_luci-app-aria2:aria2 \
+	+PACKAGE_luci-app-aria2:curl \
+	+PACKAGE_luci-app-aria2:wget \
+	+PACKAGE_luci-app-aria2:openssl-util))
+
+$(eval $(call application,chinadns,LuCI Support for ChinaDNS,\
+	+PACKAGE_luci-app-chinadns:ChinaDNS))
+
+$(eval $(call application,cpulimit,LuCI Support for cpulimit,\
+	+PACKAGE_luci-app-cpulimit:cpulimit))
+
+$(eval $(call application,dns2socks,LuCI Support for dns2socks,\
+	+PACKAGE_luci-app-dns2socks:dns2socks))
+
+$(eval $(call application,macvlan,LuCI Support for macvlan,\
+    +PACKAGE_luci-app-macvlan:kmod-macvlan \
+    +PACKAGE_luci-app-macvlan:luci-app-mwan3))
+
+$(eval $(call application,mjpg-streamer,LuCI Support for mjpg-streamer,\
+    +PACKAGE_luci-app-mjpg-streamer:mjpg-streamer))
+
+$(eval $(call application,n2n_v2,LuCI Support for n2n_v2,\
+    +PACKAGE_luci-app-n2n_v2:n2n_v2))
+
+$(eval $(call application,qos-gargoyle,LuCI Support for qos-gargoyle,\
+    +PACKAGE_luci-app-qos-gargoyle:qos-gargoyle))
+
+$(eval $(call application,redsocks2,LuCI Support for redsocks2,\
+	+PACKAGE_luci-app-redsocks2:redsocks2 \
+	+PACKAGE_luci-app-redsocks2:kmod-ipt-nat \
+	+PACKAGE_luci-app-redsocks2:kmod-ipt-nat-extra \
+	+PACKAGE_luci-app-redsocks2:kmod-ipt-ipset \
+	+PACKAGE_luci-app-redsocks2:ipset \
+	+PACKAGE_luci-app-shadowsocks:resolveip))
+
+$(eval $(call application,shadowsocks,LuCI Support for shadowsocks,\
+    +PACKAGE_luci-app-shadowsocks:shadowsocks-libev))
+
+$(eval $(call application,usb-printer,LuCI Support for usb-printer,\
+    +PACKAGE_luci-app-usb-printer:p910nd))
+
+$(eval $(call application,vsftpd,LuCI Support for vsftpd,\
+    +PACKAGE_luci-app-vsftpd:vsftpd-pam))
+
+$(eval $(call application,xunlei,LuCI Support for Xware downloading app,\
+    +PACKAGE_luci-app-xunlei:wget))
+
 ### Compile ###
 PKG_CONFIG_DEPENDS=$(patsubst %,CONFIG_PACKAGE_%,$(LUCI_BUILD_PACKAGES))
 
