@@ -1,0 +1,25 @@
+#!/bin/sh /etc/rc.common
+. /lib/functions.sh
+START=90
+start() {
+	config_load "adbyby"
+	local enabled
+	config_get enabled config enabled
+	[ $enabled -eq 0 ] && {
+		return 0
+	}
+	/usr/share/adbyby/adbyby&	
+	sleep 1
+	local forward
+	config_get forward config forward
+	[ $forward -eq 0 ] && {
+		/usr/share/adbyby/forward.sh stop
+		return 0
+	}
+	/usr/share/adbyby/forward.sh start
+}
+stop() {
+	service_stop /usr/share/adbyby/adbyby
+	sleep 1
+	/usr/share/adbyby/forward.sh stop
+}

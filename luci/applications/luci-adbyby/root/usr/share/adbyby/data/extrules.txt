@@ -1,0 +1,2 @@
+rule=http://mwsl-hosts.qiniudn.com/MWSL-adbyby.txt
+rule=http://mwsl-hosts.qiniudn.com/MWSL-adbyby2.txt
