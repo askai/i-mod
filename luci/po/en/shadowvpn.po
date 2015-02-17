@@ -1,0 +1,8 @@
+msgid "MTU"
+msgstr "MTU"
+
+msgid "Concurrency"
+msgstr "Concurrency"
+
+msgid "Output Interface"
+msgstr "Output Interface"
