@@ -52,8 +52,6 @@ define protocol
   LUCI_BUILD_PACKAGES += luci-proto-$(1)
 endef
 
-$(eval $(call protocol,shadowvpn,Support for ShadowVPN,+ShadowVPN))
-
 ### Applications ###
 define application
   define Package/luci-app-$(1)
@@ -77,33 +75,9 @@ define application
   LUCI_BUILD_PACKAGES += luci-app-$(1)
 endef
 
-$(eval $(call application,aria2,LuCI Support for aria2,\
-	+PACKAGE_luci-app-aria2:aria2 \
-	+PACKAGE_luci-app-aria2:curl \
-	+PACKAGE_luci-app-aria2:wget \
-	+PACKAGE_luci-app-aria2:openssl-util))
-
-$(eval $(call application,shadowsocks,LuCI Support for shadowsocks,\
-	+PACKAGE_luci-app-shadowsocks:shadowsocks-libev \
-	+PACKAGE_luci-app-shadowsocks:kmod-ipt-nat \
-	+PACKAGE_luci-app-shadowsocks:kmod-ipt-nat-extra \
-	+PACKAGE_luci-app-shadowsocks:kmod-ipt-ipset \
-	+PACKAGE_luci-app-shadowsocks:ipset \
-	+PACKAGE_luci-app-shadowsocks:resolveip))
-
-$(eval $(call application,redsocks2,LuCI Support for redsocks2,\
-	+PACKAGE_luci-app-redsocks2:redsocks2 \
-	+PACKAGE_luci-app-redsocks2:kmod-ipt-nat \
-	+PACKAGE_luci-app-redsocks2:kmod-ipt-nat-extra \
-	+PACKAGE_luci-app-redsocks2:kmod-ipt-ipset \
-	+PACKAGE_luci-app-redsocks2:ipset \
-	+PACKAGE_luci-app-shadowsocks:resolveip))
-
-$(eval $(call application,vsftpd,LuCI Support for vsftpd,\
-	+PACKAGE_luci-app-vsftpd:vsftpd))
-
-$(eval $(call application,chinadns,LuCI Support for ChinaDNS,\
-	+PACKAGE_luci-app-chinadns:ChinaDNS))
+$(eval $(call application,adbyby,LuCI Support for adbyby,\
+    +PACKAGE_luci-app-adbyby:libpthread \
+    +PACKAGE_luci-app-adbyby:libstdcpp))
 
 ### Compile ###
 PKG_CONFIG_DEPENDS=$(patsubst %,CONFIG_PACKAGE_%,$(LUCI_BUILD_PACKAGES))
